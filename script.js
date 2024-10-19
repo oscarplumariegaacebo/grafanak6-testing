@@ -16,9 +16,10 @@ export default function () {
 
     let res = http.get('https://localhost:7234/api/Budgets'); // HTTP Get all budgets
 
-    check(res, {
-        'is status 200': (x) => x.status === 200 // An assertion
-    });
+check(res, {
+    "is status 200": (r) => r.status === 200,
+    "is status 500": (r) => r.status === 500
+});
 
     console.log(`${JSON.stringify(res)}`);
 
